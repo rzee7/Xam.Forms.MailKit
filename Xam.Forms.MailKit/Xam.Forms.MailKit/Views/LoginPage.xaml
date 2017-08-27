@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Xam.Forms.MailKit.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="#607D8B">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Image
+                Grid.Row="0"
+                HorizontalOptions="Center"
+                Source="logo"
+                VerticalOptions="Center" />
+            <StackLayout
+                Grid.Row="1"
+                Padding="10"
+                VerticalOptions="Start">
+                <Entry
+                    Placeholder="Email"
+                    PlaceholderColor="White"
+                    Text="{Binding UserName}"
+                    TextColor="White" />
+                <Entry
+                    IsPassword="True"
+                    Placeholder="Password"
+                    PlaceholderColor="White"
+                    Text="{Binding Password}"
+                    TextColor="White" />
+                <Button Command="{Binding LoginCommand}" Text="Login" />
+                <ContentView Padding="10">
+                    <Label
+                        FontSize="Micro"
+                        Text="Purpose of this sample to use: &#x0a;◉ Dependency Service.&#x0a;◉ Platform Code in PCL.&#x0a;◉ Components with Xamarin Forms."
+                        TextColor="White" />
+                </ContentView>
+            </StackLayout>
+            <ActivityIndicator
+                HorizontalOptions="Center"
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                VerticalOptions="Center" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

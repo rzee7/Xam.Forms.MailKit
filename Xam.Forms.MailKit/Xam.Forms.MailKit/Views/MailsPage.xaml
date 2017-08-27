@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Xam.Forms.MailKit.Views.MailsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True">
+    <ContentPage.Content>
+        <Grid>
+            <ListView HasUnevenRows="True" ItemsSource="{Binding Messages}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid
+                                    BackgroundColor="White"
+                                    RowSpacing="0"
+                                    VerticalOptions="Start">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.RowSpan="3"
+                                        BackgroundColor="{Binding TextBGColor}"
+                                        FontSize="40"
+                                        HorizontalOptions="Fill"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding InitialName}"
+                                        TextColor="White"
+                                        VerticalOptions="Fill"
+                                        VerticalTextAlignment="Center" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontSize="Small"
+                                        HorizontalOptions="FillAndExpand"
+                                        Text="{Binding From}"
+                                        TextColor="Black" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        FontSize="Small"
+                                        HorizontalOptions="FillAndExpand"
+                                        Text="{Binding Subject}"
+                                        TextColor="Gray" />
+                                    <Label
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        FontSize="Small"
+                                        HorizontalOptions="FillAndExpand"
+                                        Text="{Binding Date, StringFormat='{0:dd MMM yyyy hh:mm tt}'}"
+                                        TextColor="Gray" />
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ActivityIndicator
+                HorizontalOptions="Center"
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                VerticalOptions="Center" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

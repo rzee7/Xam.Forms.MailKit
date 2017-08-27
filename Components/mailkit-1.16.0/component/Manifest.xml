@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="mailkit">
+  <name>MailKit</name>
+  <publisher>Jeffrey Stedfast</publisher>
+  <publisher-url>http://github.com/jstedfast/MailKit</publisher-url>
+  <version>1.16.0</version>
+  <summary>Send and receive emails via SMTP, IMAP, and POP3. Encrypt or sign emails via OpenPGP, S/MIME and DKIM.</summary>
+  <packages>
+    <package id="MailKit" version="1.16.0" framework="android" />
+    <package id="MailKit" version="1.16.0" framework="ios-unified" />
+  </packages>
+  <samples>
+    <sample id="ImapClientDemo.Android">
+      <name>Android Sample</name>
+      <summary>Android Sample</summary>
+    </sample>
+    <sample id="ImapClientDemo.iOS">
+      <name>iOS Sample</name>
+      <summary>iOS Sample</summary>
+    </sample>
+  </samples>
+</component>
